@@ -54,7 +54,12 @@ class ProductManager {
     }
 
     getproductByID (idfind){ //busqueda de productos por ID
-        return this.product.find((produ) => produ.id === idfind); 
+        if(this.product.find((produ) => produ.id === idfind)){
+            return this.product.find((produ) => produ.id === idfind);
+        }
+        else{
+            return "Not found";
+        }
     }  
 
 }
@@ -72,4 +77,4 @@ console.log(productos.getProduct()); //obtenemos lista de productos resgistrados
 
 console.log("El producto retornado de busqueda por ID es el siguiente:");
 
-console.log(productos.getproductByID (1)); //buscamos el producto con el ID ingresado, como ejemplo en este caso se coloca id=1
+console.log(productos.getproductByID (5)); //buscamos el producto con el ID ingresado, como ejemplo en este caso se coloca id=1
