@@ -1,5 +1,5 @@
 const fs = require('fs'); //Definimos modulo de file system
-const archivo = './new_file.txt'; //definimos ruta del archivo
+const archivo = './new_file.txt'; //definimos nombre y ruta del archivo
 
 class ProductManager {
     //declaramos propiedades de la clase 
