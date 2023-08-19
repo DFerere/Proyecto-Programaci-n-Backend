@@ -1,0 +1,57 @@
+[
+	{
+		"title": "Asus Laptop",
+		"description": "Asus TUF Gaming A15 2022 color gris",
+		"price": 100,
+		"thumbnail": "www.amazon.com/asus_tuf_a15",
+		"code": 100,
+		"stock": 4,
+		"id": 0
+	},
+	{
+		"title": "Laptop HP",
+		"description": "HP Victus Gaming color negro",
+		"price": 800,
+		"thumbnail": "www.hplaptops.com/hp_victus",
+		"code": 101,
+		"stock": 10,
+		"id": 1
+	},
+	{
+		"title": "Laptop Acer",
+		"description": "Acer Pradator Gaming color blanco",
+		"price": 1000,
+		"thumbnail": "www.acerlaptops.com/hp_victus",
+		"code": 105,
+		"stock": 18,
+		"id": 2
+	},
+	{
+		"title": "Asus Laptop",
+		"description": "Asus TUF Gaming A15 2022 color gris",
+		"price": 100,
+		"thumbnail": "www.amazon.com/asus_tuf_a15",
+		"code": 110,
+		"stock": 4,
+		"id": 3
+	},
+	{
+		"title": "Laptop HP",
+		"description": "HP Victus Gaming color negro",
+		"price": 800,
+		"thumbnail": "www.hplaptops.com/hp_victus",
+		"code": 120,
+		"stock": 10,
+		"id": 4
+	},
+	{
+		"title": "Laptop Acer",
+		"description": "Acer Pradator Gaming color blanco",
+		"price": 1000,
+		"thumbnail": "www.acerlaptops.com/hp_victus",
+		"code": 135,
+		"stock": 18,
+		"id": 5
+	}
+
+]
