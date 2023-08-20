@@ -14,7 +14,7 @@ class ProductManager {
 
   constructor() { //constructor con elemento product arreglo vacio
     this.products = []; //definimos arreglo vacio que guardara productos
-    this.path = archivo;
+    this.path = archivo; //definimos variable en constructor con ruta del archivo
   }
 
   //Funcion para agregar productos
@@ -72,27 +72,27 @@ class ProductManager {
     return contenidoObj;
   }
 
-  async readProducts() { 
+  async readProducts() { //funcion para leer arreglo de productos desde el archivo
     const answer = await fs.promises.readFile(this.path, "utf-8");
-    const ObjectAnswer = answer == '' ? [] : JSON.parse(answer);
+    const ObjectAnswer = answer == '' ? [] : JSON.parse(answer); 
     return ObjectAnswer;
   }
 
-  async writeFile(allProducts) {
+  async writeFile(allProducts) { //funcion que escribe contenido en archivo
     await fs.promises.writeFile(
       this.path,
       JSON.stringify(allProducts, null, '\t'))
 
   }
 
-  async getProducts() {
+  async getProducts() { //funcion que obtiene arreglo de productos en archivo
     try {
-      if (!fs.existsSync(this.path)) {
-        await this.writeFile(this.products);
+      if (!fs.existsSync(this.path)) { //verifica que el archivo exista
+        await this.writeFile(this.products); //crea el archivo con contenido vacio
       }
-      const arrayProducts = await this.readProducts();
+      const arrayProducts = await this.readProducts(); //lee contenido del archivo
 
-      return arrayProducts
+      return arrayProducts //devuelve contenido del archivo
 
     } catch (error) {
       /*Manejo de errores */
@@ -182,25 +182,6 @@ class ProductManager {
 
 }
 
-
-
-//const productos = new ProductManager(); //instanciamos clase ProductManager
-
-//productos.getProduct();
-
-//const funcionAsync = async () => { //definimos funcición asincrona para la ejecución de cada metodo
-//Descomente aquellos metodos que desea probar
-//await productos.addProduct2( "Asus Laptop", "Asus TUF Gaming A15 2022 color gris", 100, "www.amazon.com/asus_tuf_a15", 100, 4); //agregamos primer producto
-//await productos.addProduct2("Laptop HP", "HP Victus Gaming color negro", 800, "www.hplaptops.com/hp_victus", 101, 10); //agregamos segundo producto
-//await productos.addProduct2("Laptop Acer", "Acer Pradator Gaming color blanco", 1000, "www.acerlaptops.com/hp_victus", 105, 18);
-//console.log(await productos.getproductByID (1)); //llamamos metodo para buscar producto por ID
-//productos.getProduct(); //retorna contenido del file que resguarda lista de productos
-//await productos.updateproductByID(1, "Laptop Canaimita", null, null, null, 200, 15); //modificamos datos de un producto por ID
-//await productos.deleteproductByID(1); //borramos un producto de la lista segun su ID
-
-//};
-
-//funcionAsync(); //ejecutamos función asincrona 
 module.exports = ProductManager;
 
 
