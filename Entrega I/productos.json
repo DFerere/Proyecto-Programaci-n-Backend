@@ -1,0 +1,24 @@
+[
+	{
+		"title": "Asus Laptop ROG",
+		"description": "Asus Republic of Gamers",
+		"price": 1000,
+		"thumbnail": "www.amazon.com/asus_rog",
+		"code": 156,
+		"stock": 5,
+		"status": true,
+		"category": "laptops",
+		"id": 0
+	},
+	{
+		"title": "Asus Laptop ROG",
+		"description": "Asus Republic of Gamers",
+		"price": 1000,
+		"thumbnail": "www.amazon.com/asus_rog",
+		"code": 158,
+		"stock": 5,
+		"status": true,
+		"category": "laptops",
+		"id": 3
+	}
+]
