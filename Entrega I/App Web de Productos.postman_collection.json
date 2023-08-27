@@ -1,0 +1,160 @@
+{
+	"info": {
+		"_postman_id": "78850491-f11a-4a6b-9945-2eb8cae1b6f0",
+		"name": "App Web de Productos",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18772740",
+		"_collection_link": "https://martian-moon-75265.postman.co/workspace/Programaci%25C3%25B3n-Backend~62617885-c2f8-4667-8acd-b36ad24d63c4/collection/18772740-78850491-f11a-4a6b-9945-2eb8cae1b6f0?action=share&source=collection_link&creator=18772740"
+	},
+	"item": [
+		{
+			"name": "Request Producto por ID",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/products/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"products",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Request Todos los Productos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/products?limit=2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"products"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Request Agregar Productos",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Asus Laptop ROG\",\r\n    \"description\": \"Republic of Gamers\",\r\n    \"price\": 1000,\r\n    \"thumbnail\": \" \",\r\n    \"code\": 208,\r\n    \"stock\": 5,\r\n    \"status\": true, \r\n    \"category\": \"laptops\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/products/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"products",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Request Agregar Productos Copy",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Asus Laptop ROG\",\r\n    \"description\": \"Republic of Gamers\",\r\n    \"price\": 1000,\r\n    \"thumbnail\": \" \",\r\n    \"code\": 208,\r\n    \"stock\": 5,\r\n    \"status\": true, \r\n    \"category\": \"laptops\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/products/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"products",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Request Agregar Productos Copy 2",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Asus Laptop ROG\",\r\n    \"description\": \"Republic of Gamers\",\r\n    \"price\": 1000,\r\n    \"thumbnail\": \" \",\r\n    \"code\": 208,\r\n    \"stock\": 5,\r\n    \"status\": true, \r\n    \"category\": \"laptops\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/products/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"products",
+						"2"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

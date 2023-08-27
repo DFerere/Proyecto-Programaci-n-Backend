@@ -1,0 +1,97 @@
+{
+	"info": {
+		"_postman_id": "1691460f-6694-4d0f-9240-187aeb2ab994",
+		"name": "App Web de Carritos",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18772740",
+		"_collection_link": "https://martian-moon-75265.postman.co/workspace/Programaci%25C3%25B3n-Backend~62617885-c2f8-4667-8acd-b36ad24d63c4/collection/18772740-1691460f-6694-4d0f-9240-187aeb2ab994?action=share&source=collection_link&creator=18772740"
+	},
+	"item": [
+		{
+			"name": "Request Producto por ID",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/carts/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"carts",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Agregar producto a carrito",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/carts/0/products/0",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"carts",
+						"0",
+						"products",
+						"0"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear Carritos",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Asus Laptop ROG\",\r\n    \"description\": \"Republic of Gamers\",\r\n    \"price\": 1000,\r\n    \"thumbnail\": \" \",\r\n    \"code\": 208,\r\n    \"stock\": 5,\r\n    \"status\": true, \r\n    \"category\": \"laptops\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/carts/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"carts",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
