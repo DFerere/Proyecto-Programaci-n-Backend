@@ -3,8 +3,6 @@ import express from 'express';
 import productsRouter from './routes/productsRouter.js';
 import productsRouterHandlebars from './routes/productsRouterHandlebars.js';
 import realproductsRouterHandlebars from '../src/routes/realproductsRouterHandelbars.js';
-//import realproductsRouterHandlebars2 from './routes/realproductsRouterHandelbars2.js';
-import cartsRouter from './routes/cartsRouter.js';
 import handlebars from 'express-handlebars';
 import __dirname from './utils.js';
 import { Server } from 'socket.io';
@@ -18,9 +16,6 @@ const app = express();
 const httpServer = app.listen(8080, () => console.log("Servidor corriendo!!"));
 const socketServer = new Server(httpServer);
 
-//const httpServer2 = app.listen(8081, () => console.log("Servidor corriendo!!"));
-//const socketServer2 = new Server(httpServer2);
-
 app.engine('handlebars', handlebars.engine());
 
 app.use(express.urlencoded({ extended: true }));
@@ -28,7 +23,7 @@ app.use(express.json());
 
 app.use('/api/products', productsRouter); //endpoint para gestionar productos
 app.use('/home/handlebars', productsRouterHandlebars); //endpoint para gestionar productos
-//app.use('/home/realTimeProducts', realproductsRouterHandlebars);
+//app.use('/home/realTim
 
 
 app.use('/api/carts', cartsRouter); //endpoint para gestionar carritos 
