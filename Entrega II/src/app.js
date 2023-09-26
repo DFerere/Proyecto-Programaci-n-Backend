@@ -48,6 +48,8 @@ app.set('view engine', 'handlebars');
 app.use('/mongo/products', productsRouterMongo); //endpoint para gestionar productos
 app.use('/mongo/carts', cartsRouterMongo);
 
+//app.use('/products', productsRouterMongo); //view de products
+
 app.use('/api', cartsRouterMongo);
 
 app.use('/mongo/chat', chatRouterMongo); //endpoint del chat
@@ -63,6 +65,14 @@ socketServer.on('connection', async socket => {
     socket.on('message', data => {
       console.log(data);
     })
+
+    //Enviar catalogo de productos por handlebars
+    const query = {}; 
+    //const allPageProducts = await productosMongo.getpageProducts(query, 1, 10, 1);
+    const allPageProducts = await productosMongo.getallProducts();
+    //console.log("AllPageProducts"); 
+    //console.log(allPageProducts); 
+    socketServer.emit('product', allPageProducts);
 
     ///endpoint chat///////
 
@@ -110,8 +120,8 @@ socketServer.on('connection', async socket => {
       const idcarrito = !idprod.idcarrito?null:idprod.idcarrito; 
       const idproduct = !idprod.idproduct?null:idprod.idproduct;
 
-      console.log(idcarrito);
-      console.log(idproduct); 
+      //console.log(idcarrito);
+      //console.log(idproduct); 
 
       //const quantity = 1; 
         //const response = await productos.deleteproductByID(id);
@@ -119,7 +129,7 @@ socketServer.on('connection', async socket => {
       if (idprod == null && idcarrito == null){
         const response = await carritoMongo.createcart();
       } else {
-        console.log("Vamos agregar un producto al carrito del ALbert"); 
+        console.log("Vamos agregar un producto al carrito de ALbert"); 
         const response2 = await carritoMongo.addProductCart(idcarrito, idproduct);
         //console.log(response);
       }
