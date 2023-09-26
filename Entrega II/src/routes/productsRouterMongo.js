@@ -15,6 +15,11 @@ const productosMongo = new ProductManagerMongo();
     res.render("realTimeProducts", {
     })
 })*/
+ /*View de productos catalogo paginaciçion*/
+router.get("/catalog", async (req, res) => {
+    res.render("ViewsProducts", {
+    })
+})
 
 /*Limite de Productos*/
 /*router.get('/', async (req, res) => { //trae lista de productos con param limit
@@ -42,13 +47,16 @@ const productosMongo = new ProductManagerMongo();
 })*/
 
 /*Paginación*/
-router.get('/', async (req, res) => { //trae lista de productos con param limit
+router.get('/', async (req, res) => { //trae lista de productos con param limit, page, query y sort
 
     var page = req.query.page;
     var limit = req.query.limit;
     var query = req.query.query; 
     var queryvalue = req.query.queryvalue;
     var sortvalue = req.query.sortvalue; 
+
+    /*res.render("ViewsProducts", {
+    })*/
 
     parseInt(page);
     parseInt(limit);
@@ -60,7 +68,7 @@ router.get('/', async (req, res) => { //trae lista de productos con param limit
     //const response = await productos.getProducts();
 
     if(!sortvalue){
-        sortvalue = 0; 
+        sortvalue = 1; 
     }
 
     if (!page && !limit && !query) {
@@ -68,7 +76,9 @@ router.get('/', async (req, res) => { //trae lista de productos con param limit
         const limitconst = 10;
         const query = {}; 
         const response = await productosMongo.getpageProducts(query, pageconst, limitconst, sortvalue);
-        return res.send(response);
+        return response; 
+        //console.log(response); 
+        return res.send(response); //Habilitar si usa Postman
     } 
 
     if (page && !limit && !query) {
