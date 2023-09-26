@@ -23,12 +23,13 @@ class ProductManagerMongo {
     }
 
     async getallProducts(){
-        const getprod = await productsModel.find(); 
+        const getprod = await productsModel.find().lean(); 
+        //console.log(getprod); 
         return getprod; 
     }
 
     async getProducts(limit){
-        const getprod = await productsModel.find({}).limit(limit).exec(); 
+        const getprod = await productsModel.find({}).limit(limit).exec().lean(); 
         return getprod; 
     }
 
