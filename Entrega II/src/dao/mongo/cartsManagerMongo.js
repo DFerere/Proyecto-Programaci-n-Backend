@@ -160,12 +160,10 @@ class CartManagerMongo {
         console.log("Entro a traer todos los productos del carrito con populate");
 
         console.log(cid);
-      
 
-
-        const deletecartprod = await cartsModel.find({_id : cid}).populate('Products.product');
+        const populateCartprod = await cartsModel.find({_id : cid}).populate('Products.product');
  
-        return deletecartprod;
+        return populateCartprod;
 
 
     }
