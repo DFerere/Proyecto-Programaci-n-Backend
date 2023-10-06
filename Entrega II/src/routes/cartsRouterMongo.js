@@ -101,11 +101,22 @@ router.get("/products/:cid", async (req, res) => {
     var cid = req.params.cid;
     const response = await carritosMongo.getCartProducts(cid);
 
-    res.render("ViewsCarts", {
+    console.log("Imprime response"); 
+    const str = JSON.stringify(response);
+    console.log(str); 
+
+    const str2 = JSON.parse(str); 
+
+    console.log(str2[0]); 
+    /*res.render("ViewsCarts", {
         cid : cid,
         response : response,
 
-    })
+    });*/
+
+    const response2 = response[0]; 
+
+    res.render("ViewsCarts", { response2 });
 
     //var cid = parseInt(req.params.cid);
     //var pid = parseInt(req.params.pid);
@@ -122,7 +133,7 @@ router.get("/products/:cid", async (req, res) => {
 
     
 
-    return res.send(response);
+    //return res.send(response);
 })
 
 export default router;
