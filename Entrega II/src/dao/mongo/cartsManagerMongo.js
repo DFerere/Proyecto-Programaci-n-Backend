@@ -155,13 +155,13 @@ class CartManagerMongo {
     }
 
 
-    async getCartProducts(cid) {
+     async getCartProducts(cid) {
 
         console.log("Entro a traer todos los productos del carrito con populate");
 
         console.log(cid);
 
-        const populateCartprod = await cartsModel.find({_id : cid}).populate('Products.product');
+        const populateCartprod = await cartsModel.find({_id : cid}).populate('Products.product').lean();
  
         return populateCartprod;
 
