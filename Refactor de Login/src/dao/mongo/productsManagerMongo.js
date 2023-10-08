@@ -53,15 +53,8 @@ class ProductManagerMongo {
           };
 
         const getprod = await productsModel.paginate(query, {limit: limit, page: page, sort: { _id: sortvalue, price: 1}, customLabels: myCustomLabels}); 
-        //const stockprod = await productsModel.find({category}); 
-       // console.log(stockprod); 
-       /* if(getprod.stock == 0){
-            return "El producto no esta Disponible";
-        } else {
-            return getprod; 
-        }*/
+    
         return getprod; 
-        //sort({price: 1});
     }
 
 }
